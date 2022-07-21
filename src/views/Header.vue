@@ -22,7 +22,7 @@ export default {
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
   }
 
   a{

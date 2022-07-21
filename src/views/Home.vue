@@ -1,7 +1,6 @@
 <template>
     <main>
-        <First />
-        <h1 class="product__title">Nossos produtos</h1>
+        <First/>
         <Produtos/>
     </main>
 </template>
@@ -16,14 +15,5 @@ export default {
 </script>
 
 <style>
-main{
-    margin: 80px 0;
-}
-
-.product__title{
-    background-color: white;
-    text-align: center;
-    padding: 50px 0;
-}
 
 </style>

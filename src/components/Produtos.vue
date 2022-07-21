@@ -1,16 +1,19 @@
 <template>
-  <div class="produtos">
-        <div class="produtos__card" v-for="produto in $store.state.copos" :key="produto.id">
-            <div class="produtos__img" >
-                <img :src="require('@/assets/' + produto.img + '')">
-            </div>
-            <div class="produtos__infos">
-                <h2>R${{produto.preco.toFixed(2)}}</h2>
-                <p>{{produto.title}}</p>
-                <button @click.stop="addToCart(produto)">ADD TO CART</button>
+    <section v-prlx="{reverse:true, fromBottom:true, speed:0.4, limit: { min: -150 }}">
+        <fa id="icon" icon="coffee"/>
+        <div class="produtos">
+            <div class="produtos__card" v-for="produto in $store.state.copos" :key="produto.id">
+                <div class="produtos__img" >
+                    <img :src="require('@/assets/' + produto.img + '')">
+                </div>
+                <div class="produtos__infos">
+                    <h2>R${{produto.preco.toFixed(2)}}</h2>
+                    <p>{{produto.title}}</p>
+                    <button @click.stop="addToCart(produto)">ADD TO CART</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -24,15 +27,27 @@ export default {
 </script>
 
 <style>
+
+    section{
+        background-color: white;
+    }
+
     .produtos{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
-        padding: 10px 80px;
+        padding: 100px 80px;
         justify-items: center;
         align-items: center;
         padding-bottom: 100px;
     }
+
+    #icon{
+        display: flex;
+        margin: 100px auto;
+        transform: scale(5);
+    }
+
 
     .produtos__card{
         display: grid;
@@ -42,17 +57,16 @@ export default {
         overflow: hidden;
         border: 0.5px solid rgba(0, 0, 0, 0.192);
         border-radius: 20px;
-        transition: all ease 1s;
     }
-    .produtos__card:hover{
+
+    .produtos__img{
+        overflow: hidden;
+    }
+
+    .produtos__img img:hover{
         transform: scale(1.1);
     }
 
-    button:hover{
-        transform: scale(1.1);
-        color: white;
-        background-color: rgb(68, 68, 68);
-    }
 
     .produtos__img img{
         height: 100%;
@@ -68,6 +82,23 @@ export default {
         border: none;
         padding: 10px;
         border-radius: 5px;
-        transition: all ease 1s;
+    }
+    
+    button:hover{
+        transform: scale(1.08);
+        color: white;
+        background-color: rgb(68, 68, 68);
+    }
+
+    @media screen and (max-width: 950px) {
+        .produtos{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .produtos{
+            grid-template-columns: 1fr;
+        }
     }
 </style>

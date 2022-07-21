@@ -8,7 +8,7 @@ import {fas} from '@fortawesome/free-solid-svg-icons'
 import VuePrlx from 'vue-prlx'
 
 library.add(fas)
-Vue.use(VuePrlx);
+Vue.use(VuePrlx)
 Vue.component('fa',FontAwesomeIcon)
 Vue.config.productionTip = false
 

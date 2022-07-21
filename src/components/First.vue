@@ -1,10 +1,9 @@
 <template>
     <section class="first">
         <h1 >Seu café, só que mais maneiro.</h1>
-        <fa class="first__icon" icon="coffee"/>
-        <div v-prlx.background="{
+        <div id="img" v-prlx.background="{
         direction: 'x',
-        speed: 0.04
+        speed: 0.03
         }"></div>
     </section>
 </template>
@@ -19,7 +18,7 @@ export default {
     .first{
         position: relative;
         width: 100%;
-        height: 500px;
+        height: 100vh
     }
     .first__icon{
         position: absolute;
@@ -34,6 +33,8 @@ export default {
         object-fit: cover;
     }
     h1{
+      
+        margin: 80px 0;
         position: absolute;
         background-color: #d3c5b7;
         padding:2%;
