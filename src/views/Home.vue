@@ -9,7 +9,7 @@
 import Produtos from '../components/Produtos.vue'
 import First from '../components/First.vue'
 export default {
-    components:{First, Produtos},
+    components:{First, Produtos}
     
 }
 </script>

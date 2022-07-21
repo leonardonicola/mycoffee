@@ -16,13 +16,13 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;900&display=swap');
 *{
   box-sizing: border-box;
   transition: cubic-bezier(.25,.75,.5,1) 0.9s !important;
 }
 body{
-  font-family: 'Roboto Mono', Arial, monospace;
+  font-family: 'Archivo', sans-serif;
   margin: 0 auto;
   overflow-x: hidden;
 }

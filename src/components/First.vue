@@ -1,6 +1,6 @@
 <template>
     <section class="first">
-        <h1 >Seu café, só que mais maneiro.</h1>
+        <h1 v-prlx="{limit:{min:-50, max: 50}}">Seu café, só que mais maneiro.</h1>
         <div id="img" v-prlx.background="{
         direction: 'x',
         speed: 0.03
@@ -33,10 +33,14 @@ export default {
         object-fit: cover;
     }
     h1{
-      
-        margin: 80px 0;
         position: absolute;
-        background-color: #d3c5b7;
+        width: fit-content;
+        margin: 200px auto;
+        left: 0;
+        right: 0;
+        font-weight: 900;
+        font-size: 4em;
+        text-align: center;
         padding:2%;
     }
 </style>

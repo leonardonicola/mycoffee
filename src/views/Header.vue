@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Header',
+
 }
 </script>
 
@@ -29,7 +29,6 @@ export default {
     text-decoration: none;
     color: black;
     padding: 10px;
-    transition: all ease 1s;
   }
 
   a:hover{

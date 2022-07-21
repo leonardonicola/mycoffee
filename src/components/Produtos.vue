@@ -2,8 +2,9 @@
     <section v-prlx="{reverse:true, fromBottom:true, speed:0.4, limit: { min: -150 }}">
         <fa id="icon" icon="coffee"/>
         <div class="produtos">
-            <div class="produtos__card" v-for="produto in $store.state.copos" :key="produto.id">
-                <div class="produtos__img" >
+            <div class="produtos__card" v-for="produto in $store.state.copos" 
+            :key="produto.id">
+                <div class="produtos__img">
                     <img :src="require('@/assets/' + produto.img + '')">
                 </div>
                 <div class="produtos__infos">
@@ -18,6 +19,11 @@
 
 <script>
 export default {
+    data(){
+        return{
+            show:false
+        }
+    },
     methods:{
         addToCart(product){
             this.$store.commit('addToCart', product)
@@ -34,17 +40,16 @@ export default {
 
     .produtos{
         display: grid;
+        margin: 100px;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
-        padding: 100px 80px;
         justify-items: center;
         align-items: center;
-        padding-bottom: 100px;
     }
 
     #icon{
         display: flex;
-        margin: 100px auto;
+        margin: 0 auto;
         transform: scale(5);
     }
 
