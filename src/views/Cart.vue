@@ -12,8 +12,10 @@
         <button @click.stop="removeProduct(produto)">REMOVER 1 ITEM</button>
       </div>
     </div>
-    <div class="cart__summary">
+    <div class="cart__summary" v-if="$store.state.cart != ''">
       <p>Subtotal: R${{$store.state.total.toFixed(2)}}</p>
+      <p>Frete: R$20.00</p>
+      <p>Total: R${{($store.state.total + 20).toFixed(2)}}</p>
       <button v-if="$store.state.cart != ''">CHECKOUT</button>
     </div>
   </div>
@@ -36,7 +38,6 @@ export default {
   height: 100vh;
   grid-template-columns: 60% 40%;
   padding: 20px;
-  margin: 80px 0;
 }
 
 .cart__products{

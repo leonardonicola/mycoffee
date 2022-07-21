@@ -6,9 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     copos:[
-      {id: 0, title: 'Coffee Box', img:'copocafe.jpg', preco:200},
-      {id: 1, title: 'Kit My Coffee', img:'kitcoffee.jpg', preco:79.88},
-      {id: 2, title: 'Zebra Cup', img:'copolistrado.jpg', preco:38.99}
+      {id: 0, title: 'Coffee Box', img:'copocafe.jpg', preco:200, qty:0},
+      {id: 1, title: 'Kit My Coffee', img:'kitcoffee.jpg', preco:79.88, qty:0},
+      {id: 2, title: 'Zebra Cup', img:'copolistrado.jpg', preco:38.99, qty:0}
   ],
     cart:[],
     total:0

@@ -19,11 +19,6 @@
 
 <script>
 export default {
-    data(){
-        return{
-            show:false
-        }
-    },
     methods:{
         addToCart(product){
             this.$store.commit('addToCart', product)
@@ -52,7 +47,6 @@ export default {
         margin: 0 auto;
         transform: scale(5);
     }
-
 
     .produtos__card{
         display: grid;
