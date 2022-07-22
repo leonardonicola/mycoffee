@@ -26,11 +26,11 @@ export default {
         left: 50%;
         transform: scale(5);
     }
-    div{
+    #img{
         background-image: url("../assets/mockupmain.jpg");
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
     h1{
         position: absolute;

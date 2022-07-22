@@ -19,6 +19,7 @@
 
 <script>
 export default {
+
     methods:{
         addToCart(product){
             this.$store.commit('addToCart', product)
@@ -35,7 +36,7 @@ export default {
 
     .produtos{
         display: grid;
-        margin: 100px;
+        margin: 100px 100px 0 100px;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
         justify-items: center;
@@ -55,7 +56,6 @@ export default {
         height: 450px;
         overflow: hidden;
         border: 0.5px solid rgba(0, 0, 0, 0.192);
-        border-radius: 20px;
     }
 
     .produtos__img{
