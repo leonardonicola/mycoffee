@@ -46,6 +46,7 @@ export default {
 
   .header__icon:hover{
     background-color: rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
   }
 
   .header__shopping{
@@ -73,5 +74,6 @@ export default {
 
   a:hover{
     background-color: rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
   }
 </style>

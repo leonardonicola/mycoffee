@@ -2,17 +2,19 @@
 <transition name="fade">
     <div v-show="$store.state.show" @click.self="showCart()" class="cartsummary">
         <div class="cartsummary__cart" >
-            <div v-for="produto in productList" :key="produto.id">
+          <h3>SHOPPING CART</h3>
+            <div v-for="produto in productList" :key="produto.id" class="cartsummary__hero">
               <div class="cartsummary__img">
                   <img :src="require('@/assets/' + produto.img + '')" alt="Produto no carrinho">
               </div>
               <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
               <p>R${{produto.preco}}</p>
-              <button @click="removeProduct(produto)">REMOVER 1 ITEM</button>
+              <span class="cartsummary__remove" @click="removeProduct(produto)">Remover</span>
               </div>
               <fa icon="close" class="cartsummary__close-button" @click="showCart()">X</fa>
-            <h3 v-if="productList == ''">Seu carrinho está vazio!</h3>
-            <router-link v-else class="cartsummary__link" 
+            <p v-if="productList == ''">Seu carrinho está vazio!</p>
+            <p v-else>Total: R${{$store.state.total}}</p>
+            <router-link v-if="productList != ''" class="cartsummary__link" 
             @click.native="scrollToTop(); showCart()" to="/cart" >CHECKOUT</router-link>
         </div>
     </div>
@@ -41,7 +43,7 @@ computed: mapState({
 }
 </script>
 
-<style>
+<style scoped>
 .cartsummary{
     position:fixed;
     left: 0;
@@ -63,9 +65,14 @@ computed: mapState({
     overflow: auto;
 }
 
+.cartsummary__hero{
+    width: fit-content;
+    padding-bottom: 30px ;
+    border-bottom: .5px solid rgba(0, 0, 0, 0.219);
+}
+
 .fade-enter, .fade-leave-to{
   pointer-events: none;
-  opacity: 0;
 }
 
 .cartsummary__img img{
@@ -89,6 +96,22 @@ computed: mapState({
   display: block;
   margin:20px 0;
   width: fit-content;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(0, 0, 0);
+}
+
+.cartsummary__link:hover{
+  transform: scale(1.05);
+}
+
+.cartsummary__remove{
+  color: rgb(46, 46, 46);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .cartsummary__close-button{

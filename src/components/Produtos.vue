@@ -64,12 +64,13 @@ export default {
         border: none;
         padding: 10px;
         border-radius: 5px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        font-weight: bolder;
     }
     
     button:hover{
-        transform: scale(1.08);
-        color: white;
-        background-color: rgb(68, 68, 68);
+        transform: scale(1.05);
     }
 
 </style>

@@ -38,15 +38,9 @@ export default new Vuex.Store({
     },
     removeProduct(state,payload){
       const cart = state.cart
-      const existingProduct = cart.find(el => el.id === payload.id)
-
-      if(existingProduct && existingProduct.qty > 1){
-        existingProduct.qty -= 1
-        state.total -= payload.preco
-      }else if(existingProduct.qty === 1){
-        cart.splice(cart.indexOf(payload), 1)
-        state.total -= payload.preco
-      }
+      cart.splice(cart.indexOf(payload), 1)
+      state.total -= payload.preco
+      
     },
     showCart(state){
       state.show = !state.show
