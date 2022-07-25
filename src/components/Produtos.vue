@@ -1,53 +1,33 @@
 <template>
-    <section v-prlx="{reverse:true, fromBottom:true, speed:0.4, limit: { min: -150 }}">
-        <fa id="icon" icon="coffee"/>
-        <div class="produtos">
-            <div class="produtos__card" v-for="produto in $store.state.copos" 
-            :key="produto.id">
-                <div class="produtos__img">
-                    <img :src="require('@/assets/' + produto.img + '')">
-                </div>
-                <div class="produtos__infos">
-                    <h2>R${{produto.preco.toFixed(2)}}</h2>
-                    <p>{{produto.title}}</p>
-                    <button @click.stop="addToCart(produto)">ADD TO CART</button>
-                </div>
-            </div>
+    <div class="produtos__card">
+        <div class="produtos__img">
+            <img :src="require('@/assets/' + produto.img + '')">
         </div>
-    </section>
+        <div class="produtos__infos">
+            <h2>R${{produto.preco.toFixed(2)}}</h2>
+            <p>{{produto.title}}</p>
+            <button @click.stop="addToCart(produto)">ADD TO CART</button>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
-
+    props:['id'],
     methods:{
         addToCart(product){
             this.$store.commit('addToCart', product)
+        }
+    },
+    computed:{
+        produto(){
+            return this.$store.state.copos[this.id]
         }
     }
 }
 </script>
 
 <style>
-
-    section{
-        background-color: white;
-    }
-
-    .produtos{
-        display: grid;
-        margin: 100px 100px 0 100px;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
-        justify-items: center;
-        align-items: center;
-    }
-
-    #icon{
-        display: flex;
-        margin: 0 auto;
-        transform: scale(5);
-    }
 
     .produtos__card{
         display: grid;
@@ -89,15 +69,4 @@ export default {
         background-color: rgb(68, 68, 68);
     }
 
-    @media screen and (max-width: 950px) {
-        .produtos{
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media screen and (max-width: 650px) {
-        .produtos{
-            grid-template-columns: 1fr;
-        }
-    }
 </style>

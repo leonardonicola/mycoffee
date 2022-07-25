@@ -42,16 +42,10 @@ body{
   overflow-x: hidden;
 }
 
-
-
 html{
   scroll-behavior: smooth;
 }
 
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .4s;
-}
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }

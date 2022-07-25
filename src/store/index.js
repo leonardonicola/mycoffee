@@ -11,7 +11,8 @@ export default new Vuex.Store({
       {id: 2, title: 'Zebra Cup', img:'copolistrado.jpg', preco:38.99, qty:0}
   ],
     cart:[],
-    total:0
+    total:0,
+    show:false
   },
   getters: {
   },
@@ -39,6 +40,9 @@ export default new Vuex.Store({
         cart.splice(cart.indexOf(payload), 1)
         state.total -= payload.preco
       }
+    },
+    showCart(state){
+      state.show = !state.show
     }
   },
   actions: {
