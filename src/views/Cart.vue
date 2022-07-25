@@ -7,9 +7,11 @@
         <div class="cart__img">
           <img :src="require('@/assets/' + produto.img + '')" alt="Produto no carrinho">
         </div>
-        <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
-        <p>R${{produto.preco}}</p>
-        <button @click.stop="removeProduct(produto)">REMOVER 1 ITEM</button>
+        <div class="cart__infos">
+          <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
+          <p>R${{produto.preco}}</p>
+          <span class="cart__remove" @click.stop="removeProduct(produto)">Remover</span>
+        </div>
       </div>
     </div>
     <div class="cart__summary" v-if="$store.state.cart != ''">
@@ -47,16 +49,20 @@ export default {
 
 .cart__item{
   display: flex;
-  flex-direction: column;
+  gap: 20px;
   width: 100%;
   height: 100%;
-  margin: 20px 0;
-  padding: 10px;
+  padding: 20px;
+  border-bottom: .5px solid rgba(0, 0, 0, 0.171);
+}
+
+.cart__summary{
+  margin-top: 95px;
 }
 
 .cart__img{
-  width: 60%;
-  height: 300px;
+  width: 40%;
+  height: 200px;
   overflow: hidden;
   margin: 20px 0;
 }
@@ -69,5 +75,22 @@ export default {
 
 .cart button{
   width: 40%;
+}
+
+.cart__remove{
+  color: rgb(46, 46, 46);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .cart{
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .cart__summary{
+    margin: 0;
+  }
 }
 </style>

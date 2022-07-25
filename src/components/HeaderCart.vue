@@ -58,7 +58,7 @@ computed: mapState({
 .cartsummary__cart{
     z-index:103;
     right: 0;
-    width: 30%;
+    width: 35%;
     height: 100%;
     padding: 30px;
     background-color: #fff;
@@ -66,13 +66,19 @@ computed: mapState({
 }
 
 .cartsummary__hero{
-    width: fit-content;
+    width: 100%;
     padding-bottom: 30px ;
     border-bottom: .5px solid rgba(0, 0, 0, 0.219);
 }
 
 .fade-enter, .fade-leave-to{
   pointer-events: none;
+}
+.cartsummary__img{
+  width: 100%;
+  height: 200px;
+  margin:20px 0;
+  overflow:hidden;
 }
 
 .cartsummary__img img{
@@ -85,19 +91,14 @@ computed: mapState({
   transform: scale(1.1);
 }
 
-.cartsummary__img{
-  width: 200px;
-  height: 200px;
-  margin:20px 0;
-  overflow:hidden;
-}
 
 .cartsummary__link{
   display: block;
   margin:20px 0;
   width: fit-content;
-  border: none;
   padding: 10px;
+  text-decoration: none;
+  border: none;
   border-radius: 5px;
   color: white;
   font-weight: 600;
@@ -137,6 +138,12 @@ computed: mapState({
     position: fixed;
     right: 30px;
     top: 30px;
+  }
+    .cartsummary__img{
+    width: 50%;
+    height: 200px;
+    margin:20px 0;
+    overflow:hidden;
   }
 }
 </style>
