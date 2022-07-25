@@ -1,4 +1,7 @@
-# mycoffee2
+# My Coffee :coffee:
+
+<h2>Projeto em Vue 2! :rocket:	</h2>
+<p>My Coffee é um projeto feito em Vue 2 utilizando as tecnologias <i>Vuex</i> e <i>Vue Router</i></p>
 
 ## Project setup
 ```
