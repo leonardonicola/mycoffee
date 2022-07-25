@@ -61,9 +61,10 @@ computed: mapState({
     padding: 30px;
     background-color: #fff;
     overflow: auto;
-  }
+}
 
 .fade-enter, .fade-leave-to{
+  pointer-events: none;
   opacity: 0;
 }
 
@@ -110,7 +111,7 @@ computed: mapState({
   }
   .cartsummary__close-button{
     display: block;
-    position: absolute;
+    position: fixed;
     right: 30px;
     top: 30px;
   }

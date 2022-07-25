@@ -6,13 +6,20 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     copos:[
-      {id: 0, title: 'Coffee Box', img:'copocafe.jpg', preco:200, qty:0},
-      {id: 1, title: 'Kit My Coffee', img:'kitcoffee.jpg', preco:79.88, qty:0},
-      {id: 2, title: 'Zebra Cup', img:'copolistrado.jpg', preco:38.99, qty:0}
+      {id: 0, title: 'Coffee Box', img:'copocafe.jpg', preco:200, qty:0,
+      desc:"Um combo perfeito com muito sabor para seu café matinal (ou diário :P)"},
+      {id: 1, title: 'Kit My Coffee', img:'kitcoffee.jpg', preco:79.88, qty:0,
+      desc:"Dois copinhos muito bem acabados com uma vibe de filme americano imbutido!"},
+      {id: 2, title: 'Zebra Cup', img:'copolistrado.jpg', preco:38.99, qty:0,
+      desc:"O produto perfeito para tomar seu cafézinho com muito estilo!",}
   ],
     cart:[],
     total:0,
-    show:false
+    show:false,
+    togglemodal:{
+      show: false,
+      id: 0
+    }
   },
   getters: {
   },
@@ -43,6 +50,19 @@ export default new Vuex.Store({
     },
     showCart(state){
       state.show = !state.show
+    },
+    toggleModal(state, payload){
+      switch(state.togglemodal.show){
+        case true: 
+              state.togglemodal.show = false
+              state.togglemodal.id = null
+              break;
+        case false:
+          state.togglemodal.show = true
+          state.togglemodal.id = payload
+          break;
+      }
+
     }
   },
   actions: {

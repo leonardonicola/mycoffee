@@ -1,5 +1,5 @@
 <template>
-    <div class="produtos__card">
+    <div class="produtos__card" @click="toggleModal(produto.id); ">
         <div class="produtos__img">
             <img :src="require('@/assets/' + produto.img + '')">
         </div>
@@ -17,6 +17,9 @@ export default {
     methods:{
         addToCart(product){
             this.$store.commit('addToCart', product)
+        },
+        toggleModal(id){
+            this.$store.commit('toggleModal', id)
         }
     },
     computed:{

@@ -1,14 +1,12 @@
 <template>
-  <header>
-    <div class="header">
+    <header class="header">
       <router-link to="/">MYCOFFEE</router-link>
       <div class="header__shopping">
         <fa class="header__icon" @click="showCart(true)" 
-        icon="shopping-cart"/>
-        <span>{{$store.state.cart.length}}</span>
+        icon="bag-shopping"></fa>
+        <span class="header__cartlength">{{$store.state.cart.length}}</span>
       </div>
-   </div>
-  </header>
+   </header>
 </template>
 
 <script>
@@ -40,6 +38,7 @@ export default {
   }
 
   .header__icon{
+    position: relative;
     padding: 5px;
     transform: scale(1.5);
     cursor:pointer;
@@ -53,6 +52,17 @@ export default {
     display: flex;
     align-items: center;
     gap: 20px;
+  }
+
+  .header__cartlength{
+    position: absolute;
+    right: 7px;
+    top: 15px;
+    background-color: rgba(0, 0, 0, 0.589);
+    color: white;
+    padding: 0 5px;
+    border-radius: 50%;
+    z-index: 1;
   }
 
   a{

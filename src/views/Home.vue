@@ -8,6 +8,7 @@
             <Produtos :id="2"/>
             <Produtos :id="0"/>
         </section>
+        <Modal/>
     </main>
 </template>
 
@@ -15,8 +16,9 @@
 import Produtos from '../components/Produtos.vue'
 import First from '../components/First.vue'
 import HeaderCart from '../components/HeaderCart.vue'
+import Modal from '../components/Modal.vue'
 export default {
-    components:{First, Produtos, HeaderCart}
+    components:{First, Produtos, HeaderCart, Modal}
 }
 </script>
 
