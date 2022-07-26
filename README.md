@@ -1,4 +1,4 @@
-# My Coffee :houses:	
+# My Coffee :coffee:	
 
 <h3>Projeto em Vue :rocket:	</h3>
 <p>My Coffee é um projeto com intuito de montar uma lojinha virtual fake que tem um carrinho de compras.</p>
