@@ -19,6 +19,7 @@ export default {
             this.$store.commit('addToCart', product)
         },
         toggleModal(id){
+            document.body.style.overflow = 'hidden'
             this.$store.commit('toggleModal', id)
         }
     },
@@ -45,6 +46,7 @@ export default {
 
     .produtos__img{
         overflow: hidden;
+        cursor: pointer;
     }
 
     .produtos__img img:hover{
@@ -69,6 +71,7 @@ export default {
         color: #000;
         background-color: #fff(0, 0, 0);
         font-weight: bolder;
+        cursor: pointer;
     }
     
     button:hover{

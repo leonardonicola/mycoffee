@@ -26,6 +26,7 @@ methods:{
         this.$store.commit('addToCart', product)
     },
     toggleModal(id){
+        document.body.style.overflow = 'auto'
         this.$store.commit('toggleModal', id)
     }
 },

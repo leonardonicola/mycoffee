@@ -32,6 +32,7 @@ methods:{
       window.scrollTo(0,0);
     },
     showCart(){
+      document.body.style.overflow = 'auto'
       this.$store.commit('showCart')
     }
 },
@@ -61,6 +62,7 @@ computed: {
 }
 
 .cartsummary__cart{
+    position: absolute;
     z-index:103;
     right: 0;
     width: 35%;

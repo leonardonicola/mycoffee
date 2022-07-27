@@ -51,4 +51,8 @@ html{
   opacity: 0;
 }
 
+.hidden{
+  overflow: hidden; 
+}
+
 </style>

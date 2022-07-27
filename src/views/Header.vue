@@ -1,6 +1,6 @@
 <template>
     <header class="header" ref="header">
-      <router-link to="/" @click.native="showCart()">MYCOFFEE</router-link>
+      <router-link to="/">MYCOFFEE</router-link>
       <div class="header__shopping">
         <fa class="header__icon" @click="showCart()" 
         icon="bag-shopping"></fa>
@@ -19,6 +19,7 @@ export default {
   },
   methods:{
     showCart(){
+      document.body.style.overflow = 'hidden'
       this.$store.commit('showCart')
     },
     scroll(){
