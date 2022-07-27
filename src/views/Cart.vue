@@ -39,7 +39,7 @@ export default {
   display: grid;
   height: 100vh;
   grid-template-columns: 60% 40%;
-  padding: 20px;
+  padding: 100px 50px;
 }
 
 .cart__products{

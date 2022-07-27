@@ -39,7 +39,7 @@ export default new Vuex.Store({
     removeProduct(state,payload){
       const cart = state.cart
       cart.splice(cart.indexOf(payload), 1)
-      state.total -= payload.preco
+      state.total -= (payload.preco)*payload.qty
       
     },
     showCart(state){

@@ -2,14 +2,16 @@
 <transition name="slide">
   <div v-if="$store.state.togglemodal.show" class="modal">
     <div class="modal__hero">
+        <fa class="modal__close" @click="toggleModal()" icon="close"/>
         <div class="modal__img">
             <img :src="require('@/assets/' + produto.img + '')">
         </div>
         <div class="modal__infos">
-            <fa class="modal__close" @click="toggleModal()" icon="close"/>
-            <h1>{{produto.title}}</h1>
-            <p>{{produto.desc}}</p>
-            <p>Preço: R${{produto.preco}}</p>
+            <div class="modal__description">
+                <h1>{{produto.title}}</h1>
+                <p>{{produto.desc}}</p>
+                <p>Preço: <b>R${{produto.preco}}</b></p>
+            </div>
             <button class="modal__addtocart" @click="addToCart(produto)">ADICIONAR AO CARRINHO</button>
         </div>
     </div>
@@ -51,12 +53,11 @@ computed:{
         height: 100vh;
         z-index: 200;
         align-items: center;
-        background-color: white;
+        background-color: #DCDCDD;
     }
 
     .modal__hero{
         display: grid;
-        height: 80%;
         padding: var(--pad);
         grid-template-columns: 1fr 1fr;
     }
@@ -72,7 +73,18 @@ computed:{
     .modal__infos{
         display: flex;
         flex-direction: column;
-        padding: var(--pad);
+        padding: 0 var(--pad);
+        justify-content: space-between;
+    }
+
+    .modal__infos h1{
+        margin: 0;
+    }
+
+    .modal__description{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     .modal__close{
@@ -111,6 +123,16 @@ computed:{
         .modal__hero{
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
+        }
+
+        .modal__img{
+            width: 80%;
+            height: 300px;
+            margin-bottom: 50px;
+        }
+
+        .modal__infos{
+            display: block;
         }
     }
 </style>

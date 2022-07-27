@@ -18,7 +18,7 @@ export default {
     .first{
         position: relative;
         width: 100%;
-        height: 100vh
+        height: 100vh;
     }
     .first__icon{
         position: absolute;
@@ -30,7 +30,7 @@ export default {
         background-image: url("../assets/mockupmain.jpg");
         height: 100%;
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
     h1{
         position: absolute;

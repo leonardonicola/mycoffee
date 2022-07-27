@@ -23,6 +23,12 @@ export default {
 </script>
 
 <style scoped>
+
+    main{
+        background-color: #fff;
+        padding-bottom: .5px;
+    }
+
     h1{
         padding-left: 20px;
     }

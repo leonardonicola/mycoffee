@@ -27,19 +27,20 @@ export default {
 }
 
 *::-webkit-scrollbar-track {
-  background: white;        /* color of the tracking area */
+  background: #fff;        /* color of the tracking area */
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: rgb(83, 83, 83);    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid white;  /* creates padding around scroll thumb */
+  border: 3px solid #fff;  /* creates padding around scroll thumb */
 }
 
 body{
   font-family: 'Archivo', sans-serif;
   margin: 0 auto;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 html{

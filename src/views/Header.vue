@@ -1,8 +1,8 @@
 <template>
-    <header class="header">
-      <router-link to="/">MYCOFFEE</router-link>
+    <header class="header" ref="header">
+      <router-link to="/" @click.native="showCart()">MYCOFFEE</router-link>
       <div class="header__shopping">
-        <fa class="header__icon" @click="showCart(true)" 
+        <fa class="header__icon" @click="showCart()" 
         icon="bag-shopping"></fa>
         <span class="header__cartlength">{{$store.state.cart.length}}</span>
       </div>
@@ -11,38 +11,53 @@
 
 <script>
 export default {
+  mounted () {
+    window.addEventListener('scroll', this.scroll());
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.scroll());
+  },
   methods:{
     showCart(){
       this.$store.commit('showCart')
+    },
+    scroll(){
+      var prevScrollpos;
+      window.addEventListener('scroll', () => {
+        var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        if (prevScrollpos > currentScrollPos) {
+            this.$refs.header.style.top = "0";
+        } else {
+           this.$refs.header.style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+      })
     }
   }
 }
 
 </script>
 
-<style scoped>
-  header{
-    position: sticky;
-    top: 0;
-    z-index:99;
-  }
+<style>
 
   .header{
     display: flex;
+    position: fixed;
+    top: 0;
+    z-index:99;
     width: 100%;
     height: 70px;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 20px;
+    padding: 30px; 
   }
 
   .header__icon{
-    position: relative;
-    padding: 5px;
-    transform: scale(1.5);
-    cursor:pointer;
+    transform: scale(1.4);
+    padding: 7px;
+    cursor: pointer;
   }
+  
 
   .header__icon:hover{
     background-color: rgba(0, 0, 0, 0.171);
@@ -57,7 +72,7 @@ export default {
 
   .header__cartlength{
     position: absolute;
-    right: 7px;
+    right: 10px;
     top: 15px;
     background-color: rgba(0, 0, 0, 0.589);
     color: white;

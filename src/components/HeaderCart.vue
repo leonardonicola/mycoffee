@@ -8,21 +8,20 @@
                   <img :src="require('@/assets/' + produto.img + '')" alt="Produto no carrinho">
               </div>
               <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
-              <p>R${{produto.preco}}</p>
+              <p>R${{produto.preco.toFixed(2)}}</p>
               <span class="cartsummary__remove" @click="removeProduct(produto)">Remover</span>
               </div>
               <fa icon="close" class="cartsummary__close-button" @click="showCart()">X</fa>
             <p v-if="productList == ''">Seu carrinho está vazio!</p>
-            <p v-else>Total: R${{$store.state.total}}</p>
+            <p v-else>Total: R${{$store.state.total.toFixed(2)}}</p>
             <router-link v-if="productList != ''" class="cartsummary__link" 
-            @click.native="scrollToTop(); showCart()" to="/cart" >CHECKOUT</router-link>
+            @click.native="showCart(); scrollToTop()" to="/cart" >CHECKOUT</router-link>
         </div>
     </div>
 </transition>
 </template>
 
 <script>
-import {mapState} from 'vuex'
 export default {
 
 methods:{
@@ -36,9 +35,15 @@ methods:{
       this.$store.commit('showCart')
     }
 },
-computed: mapState({
-     productList: state => state.cart
-})
+computed: {
+  productList(){
+    let produto = []
+    this.$store.state.cart.forEach(element => {
+      produto.push(element)
+    });
+    return produto;
+  }
+}
 
 }
 </script>
