@@ -14,8 +14,9 @@
               <fa icon="close" class="cartsummary__close-button" @click="showCart()">X</fa>
             <p v-if="productList == ''">Seu carrinho está vazio!</p>
             <p v-else>Total: R${{$store.state.total.toFixed(2)}}</p>
-            <router-link v-if="productList != ''" class="cartsummary__link" 
-            @click.native="showCart(); scrollToTop()" to="/cart" >CHECKOUT</router-link>
+            <router-link v-if="productList != ''" 
+            class="cartsummary__link" 
+            to="/cart">CHECKOUT</router-link>
         </div>
     </div>
 </transition>
@@ -27,9 +28,6 @@ export default {
 methods:{
     removeProduct(prod){
       this.$store.commit('removeProduct', prod)
-    },
-    scrollToTop() {
-      window.scrollTo(0,0);
     },
     showCart(){
       document.body.style.overflow = 'auto'
@@ -44,6 +42,9 @@ computed: {
     });
     return produto;
   }
+},
+mounted(){
+  this.$store.state.show = false
 }
 
 }
