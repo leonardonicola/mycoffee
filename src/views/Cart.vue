@@ -30,6 +30,9 @@ export default {
     removeProduct(prod){
       this.$store.commit('removeProduct', prod)
     }
+  },
+  mounted(){
+    document.body.style.overflow = 'auto'
   }
 }
 </script>
@@ -86,8 +89,10 @@ export default {
 @media screen and (max-width: 650px) {
   .cart{
     width: 100%;
+    height: 100%;
     grid-template-columns: 1fr;
     padding: 20px;
+    margin: 50px 0;
   }
   .cart__summary{
     margin: 0;
