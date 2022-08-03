@@ -1,9 +1,12 @@
+<img src="./src/assets/mockup.png" width="500px"/>
+
 # My Coffee :coffee:	
 
 <h3>Projeto em Vue :rocket:	</h3>
 <p>My Coffee é um projeto com intuito de montar uma lojinha virtual fake que tem um carrinho de compras.</p>
-<p>O projeto tem um design simples e moderno além de ser totalmente responsivo e mobile friendly.</p><br>
-
+<p>O projeto tem um design simples e moderno além de ser totalmente responsivo e mobile friendly.</p>
+<a href="https://mycoffee-nu.vercel.app/">Acesse o site!</a>
+</br>
 
 ### 🛠 Tecnologias
 
