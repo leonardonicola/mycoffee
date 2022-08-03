@@ -19,8 +19,10 @@ export default {
   },
   methods:{
     showCart(){
-      document.body.style.overflow = 'hidden'
-      this.$store.commit('showCart')
+      if(this.$route.name === 'home'){
+        document.body.style.overflow = 'hidden'
+        this.$store.commit('showCart')
+      }
     },
     scroll(){
       var prevScrollpos;
