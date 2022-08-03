@@ -10,6 +10,7 @@
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Vue](https://vuejs.org/)
+- [Vue Parallax](https://github.com/gerasimvol/vue-prlx)
 </br>
 
 ### Features
