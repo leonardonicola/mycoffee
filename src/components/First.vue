@@ -27,7 +27,7 @@ export default {
         transform: scale(5);
     }
     #img{
-        background-image: url("../assets/mockupmain.jpg");
+        background-image: url("../assets/mockupmain.webp");
         height: 100%;
         width: 100%;
         object-fit: cover;

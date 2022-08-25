@@ -1,12 +1,12 @@
 <template>
     <div class="produtos__card" >
         <div class="produtos__img" @click="toggleModal(produto.id)">
-            <img :src="require('@/assets/' + produto.img + '')">
+            <img :src="require('@/assets/' + produto.img + '')" :alt='produto.title'>
         </div>
         <div class="produtos__infos">
             <h2>R${{produto.preco.toFixed(2)}}</h2>
             <p>{{produto.title}}</p>
-            <button @click.stop="addToCart(produto)"><fa icon="shopping-cart"/> +</button>
+            <button @click="addToCart(produto)"><fa icon="shopping-cart"/> +</button>
         </div>
     </div>
 </template>
