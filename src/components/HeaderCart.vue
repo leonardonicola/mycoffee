@@ -8,12 +8,12 @@
                   <img :src="require('@/assets/' + produto.img + '')" alt="Produto no carrinho">
               </div>
               <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
-              <p>R${{produto.preco.toFixed(2)}}</p>
+              <p>{{produto.preco | preco}}</p>
               <span class="cartsummary__remove" @click="removeProduct(produto)">Remover</span>
               </div>
               <fa icon="close" class="cartsummary__close-button" @click="showCart()">X</fa>
             <p v-if="productList == ''">Seu carrinho está vazio!</p>
-            <p v-else>Total: R${{$store.state.total.toFixed(2)}}</p>
+            <p v-else>Total: {{$store.state.total | preco}}</p>
             <router-link v-if="productList != ''" 
             class="cartsummary__link" 
             to="/cart">CHECKOUT</router-link>

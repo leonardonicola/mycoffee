@@ -19,7 +19,7 @@ export default {
 
 *{
   box-sizing: border-box;
-  transition: cubic-bezier(.25,.75,.5,1) 0.9s !important;
+  transition: cubic-bezier(.25,.75,.5,1) 0.9s;
 }
 
 *::-webkit-scrollbar{
@@ -41,10 +41,6 @@ body{
   margin: 0 auto;
   overflow-x: hidden;
   height: 100vh;
-}
-
-html{
-  scroll-behavior: smooth;
 }
 
 .fade-enter, .fade-leave-to {

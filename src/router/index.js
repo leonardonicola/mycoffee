@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Cart from '../views/Cart.vue'
 
 Vue.use(VueRouter)
+
+const Cart = () => import('../views/Cart')
+const Home = () => import('../views/Home')
 
 const routes = [
   {
@@ -15,6 +16,10 @@ const routes = [
     path: '/cart',
     name: 'cart',
     component: Cart,
+  },
+  {
+    path:'*',
+    redirect: '/'
   }
 ]
 

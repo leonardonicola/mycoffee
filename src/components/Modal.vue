@@ -10,7 +10,7 @@
             <div class="modal__description">
                 <h1>{{produto.title}}</h1>
                 <p>{{produto.desc}}</p>
-                <p>Preço: <b>R${{produto.preco}}</b></p>
+                <p>Preço: <b>{{produto.preco | preco}}</b></p>
             </div>
             <button class="modal__addtocart" @click="addToCart(produto)">ADICIONAR AO CARRINHO</button>
         </div>

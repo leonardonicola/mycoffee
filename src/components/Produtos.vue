@@ -4,7 +4,7 @@
             <img :src="require('@/assets/' + produto.img + '')" :alt='produto.title'>
         </div>
         <div class="produtos__infos">
-            <h2>R${{produto.preco.toFixed(2)}}</h2>
+            <h2>{{produto.preco | preco}}</h2>
             <p>{{produto.title}}</p>
             <button @click="addToCart(produto)"><fa icon="shopping-cart"/> +</button>
         </div>

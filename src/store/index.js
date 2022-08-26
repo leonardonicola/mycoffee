@@ -19,7 +19,7 @@ export default new Vuex.Store({
     togglemodal:{
       show: false,
       id: 0
-    }
+    },
   },
   getters: {
   },
@@ -27,36 +27,23 @@ export default new Vuex.Store({
     addToCart(state,payload){
       const existingProduct = state.cart.find(el => el.id === payload.id)
 
-      if(existingProduct){
-        existingProduct.qty += 1
-        state.total += payload.preco
-      } else{
-        payload.qty = 1
-        state.cart.push(payload)
-        state.total += payload.preco
-      }
+      existingProduct ? existingProduct.qty += 1
+      :(payload.qty = 1, state.cart.push(payload))
+
+      state.total += payload.preco
+      
     },
     removeProduct(state,payload){
       const cart = state.cart
       cart.splice(cart.indexOf(payload), 1)
       state.total -= (payload.preco)*payload.qty
-      
     },
     showCart(state){
       state.show = !state.show
     },
     toggleModal(state, payload){
-      switch(state.togglemodal.show){
-        case true: 
-              state.togglemodal.show = false
-              state.togglemodal.id = null
-              break;
-        case false:
-          state.togglemodal.show = true
-          state.togglemodal.id = payload
-          break;
-      }
-
+      state.togglemodal.show ? (state.togglemodal.show = false, state.togglemodal.id = null)
+      :(state.togglemodal.show = true, state.togglemodal.id = payload)
     }
   },
   actions: {

@@ -1,7 +1,7 @@
 <template>
     <section class="first">
         <h1>Seu café, só que mais maneiro.</h1>
-        <img src="../assets/mockupmain.png" alt="Mockup Main" loading="lazy">
+        <img src="../assets/mockupmain.png" alt="Mockup Main">
     </section>
 </template>
 
