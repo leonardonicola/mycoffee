@@ -2,31 +2,31 @@
 
 # My Coffee :coffee:	
 
-<h3>Projeto em Vue :rocket:	</h3>
-<p>My Coffee é um projeto com intuito de montar uma lojinha virtual fake que tem um carrinho de compras.</p>
-<p>O projeto tem um design simples e moderno além de ser totalmente responsivo e mobile friendly.</p>
-<a href="https://mycoffee-nu.vercel.app/">Acesse o site!</a>
+<h3>Vue Project :rocket:	</h3>
+<p>My Coffee is a project of a fake virtual shop with a cart system.</p>
+<p>The project have a minimalistic design and a responsive layout.</p>
+<a href="https://mycoffee-nu.vercel.app/">Visit the site!</a>
 </br>
 
-### 🛠 Tecnologias
+### 🛠 Technologies
 
-As seguintes ferramentas foram usadas na construção do projeto:
+The following technologies was used to build the project:
 
 - [Vue](https://vuejs.org/)
-- [Vue Parallax](https://github.com/gerasimvol/vue-prlx)
+- [Vue-Router](https://router.vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
 </br>
 
 ### Features
 
-- [x] Carrinho de compras
-- [x] Modais
-- [x] Produtos
-- [x] Parallax
+- [x] Cart
+- [x] Modals
+- [x] Products cards
 - [ ] Back-end
 
 </br>
 
-### Autor
+### Author
 ---
 
  <img src="https://avatars.githubusercontent.com/u/85263860?v=4" width="200px;" alt=""/>
@@ -34,7 +34,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <sub><b>Leonardo Nicola</b></sub></a> 🚀
 
 
-Feito com ❤️ por Leonardo Nicola 👋🏽 Entre em contato!
+Made with ❤️ by Leonardo Nicola 👋🏽 Contact me!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Leonardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leonardonicola/)](https://www.linkedin.com/in/leonardonicola/) 
 [![Gmail Badge](https://img.shields.io/badge/-leonardonicolares@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:leonardonicolares@gmail.com)](mailto:leonardonicolares@gmail.com)
