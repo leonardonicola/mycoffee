@@ -2,8 +2,8 @@
   <div class="cart">
     <div class="cart__products">
       <h1>Seu carrinho!</h1>
-      <p v-if="$store.state.cart == ''">Adicione produtinhos!</p>
-      <div v-for="product in $store.state.cart" :key="product.id" class="cart__item">
+      <p v-if="cart == ''">Adicione produtinhos!</p>
+      <div v-for="product in cart" :key="product.id" class="cart__item">
         <div class="cart__img">
           <img :src="require('@/assets/' + product.img + '')" alt="Produto no carrinho">
         </div>
@@ -14,11 +14,11 @@
         </div>
       </div>
     </div>
-    <div class="cart__summary" v-if="$store.state.cart != ''">
-      <p>Subtotal: {{$store.state.total | price}}</p>
+    <div class="cart__summary" v-if="cart != ''">
+      <p>Subtotal: {{cartTotal | price}}</p>
       <p>Frete: R$20.00</p>
-      <p>Total: {{($store.state.total + 20) | price}}</p>
-      <button v-if="$store.state.cart != ''">CHECKOUT</button>
+      <p>Total: {{(cartTotal + 20) | price}}</p>
+      <button v-if="cart != ''">CHECKOUT</button>
     </div>
   </div>
 </template>
@@ -29,6 +29,14 @@ export default {
   methods:{
     removeProduct(prod){
       this.$store.commit('removeProduct', prod)
+    }
+  },
+  computed:{
+    cart(){
+      return this.$store.state.cart
+    },
+    cartTotal(){
+      return this.$store.state.total
     }
   },
   mounted(){

@@ -2,7 +2,7 @@
     <header class="header" ref="header">
       <router-link to="/">MYCOFFEE</router-link>
       <div class="header__shopping">
-        <fa class="header__icon" @click="showCart()" 
+        <fa class="header__icon" @click="toggleCart()" 
         icon="bag-shopping"></fa>
         <span class="header__cartlength">{{$store.state.cart.length}}</span>
       </div>
@@ -12,19 +12,19 @@
 <script>
 export default {
   mounted () {
-    window.addEventListener('scroll', this.scroll());
+    window.addEventListener('scroll', this.handleScroll());
   },
   destroyed () {
-    window.removeEventListener('scroll', this.scroll());
+    window.removeEventListener('scroll', this.handleScroll());
   },
   methods:{
-    showCart(){
+    toggleCart(){
       if(this.$route.name === 'home'){
         document.body.style.overflow = 'hidden'
-        this.$store.commit('showCart')
+        this.$store.commit('toggleCart')
       }
     },
-    scroll(){
+    handleScroll(){
       var prevScrollpos;
       window.addEventListener('scroll', () => {
         var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;

@@ -1,6 +1,6 @@
 <template>
 <transition name="slide">
-  <div v-if="$store.state.togglemodal.show" class="modal">
+  <div v-if="showModal" class="modal">
     <div class="modal__hero">
         <fa class="modal__close" @click="toggleModal()" icon="close"/>
         <div class="modal__img">
@@ -34,6 +34,9 @@ computed:{
     product(){
         const id = this.$store.state.togglemodal.id
         return this.$store.state.cups[id]
+    },
+    showModal(){
+        return this.$store.state.togglemodal.show
     }
 }
 }
