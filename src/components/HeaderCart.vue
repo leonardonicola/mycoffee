@@ -35,7 +35,7 @@ export default {
     computed: {
 
         productList() {
-            return this.$store.state.cart;
+            return this.$store.getters.cart
         },
 
         showCartState() {
@@ -43,7 +43,7 @@ export default {
         },
 
         cartTotal() {
-            return this.$store.state.total
+            return this.$store.getters.total
         }
 
     },

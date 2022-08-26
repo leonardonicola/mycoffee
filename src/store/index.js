@@ -31,14 +31,21 @@ export default new Vuex.Store({
           }
       ],
       cart: [],
-      total: 0,
       showCart: false,
       togglemodal: {
           show: false,
           id: 0
       },
   },
-  getters: {},
+  getters: {
+    total(state){
+      return state.cart.map(prod => prod.qty * prod.price)
+        .reduce((total,actual) => total + actual)
+    },
+    cart(state){
+      return state.cart
+    }
+  },
   mutations: {
       addToCart(state, payload) {
           const existingProduct = state.cart.find(el => el.id === payload.id)
@@ -46,13 +53,10 @@ export default new Vuex.Store({
           existingProduct ? existingProduct.qty += 1 :
               (payload.qty = 1, state.cart.push(payload))
 
-          state.total += payload.price
-
       },
       removeProduct(state, payload) {
           const cart = state.cart
           cart.splice(cart.indexOf(payload), 1)
-          state.total -= (payload.price) * payload.qty
       },
       toggleCart(state) {
           // Toggle the cart on home visibility

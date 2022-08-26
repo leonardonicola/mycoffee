@@ -33,10 +33,10 @@ export default {
   },
   computed:{
     cart(){
-      return this.$store.state.cart
+      return this.$store.getters.cart
     },
     cartTotal(){
-      return this.$store.state.total
+      return this.$store.getters.total
     }
   },
   mounted(){
