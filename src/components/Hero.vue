@@ -1,12 +1,12 @@
 <template>
-    <section class="first">
+    <section class="hero">
         <h1>Seu café, só que mais maneiro.</h1>
         <img src="../assets/mockupmain.png" alt="Mockup Main">
     </section>
 </template>
 
 <style scoped>
-    .first{
+    .hero{
         display: grid;
         grid-template-columns:1fr 1fr;
         position: relative;

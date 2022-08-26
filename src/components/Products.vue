@@ -1,12 +1,12 @@
 <template>
-    <div class="produtos__card" >
-        <div class="produtos__img" @click="toggleModal(produto.id)">
-            <img :src="require('@/assets/' + produto.img + '')" :alt='produto.title'>
+    <div class="products__card" >
+        <div class="products__img" @click="toggleModal(products.id)">
+            <img :src="require('@/assets/' + products.img + '')" :alt='products.title'>
         </div>
-        <div class="produtos__infos">
-            <h2>{{produto.preco | preco}}</h2>
-            <p>{{produto.title}}</p>
-            <button @click="addToCart(produto)"><fa icon="shopping-cart"/> +</button>
+        <div class="products__infos">
+            <h2>{{products.price | price}}</h2>
+            <p>{{products.title}}</p>
+            <button @click="addToCart(products)"><fa icon="shopping-cart"/> +</button>
         </div>
     </div>
 </template>
@@ -24,8 +24,8 @@ export default {
         }
     },
     computed:{
-        produto(){
-            return this.$store.state.copos[this.id]
+        products(){
+            return this.$store.state.cups[this.id]
         }
     }
 }
@@ -33,7 +33,7 @@ export default {
 
 <style>
 
-    .produtos__card{
+    .products__card{
         display: grid;
         grid-template-rows:50% 50%;
         width: 100%;
@@ -44,23 +44,23 @@ export default {
         color: #fff;
     }
 
-    .produtos__img{
+    .products__img{
         overflow: hidden;
         cursor: pointer;
     }
 
-    .produtos__img img:hover{
+    .products__img img:hover{
         transform: scale(1.1);
     }
 
 
-    .produtos__img img{
+    .products__img img{
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
 
-    .produtos__infos{
+    .products__infos{
         padding: 20px;
     }
 

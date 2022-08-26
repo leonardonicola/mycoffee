@@ -4,15 +4,15 @@
     <div class="modal__hero">
         <fa class="modal__close" @click="toggleModal()" icon="close"/>
         <div class="modal__img">
-            <img :src="require('@/assets/' + produto.img + '')">
+            <img :src="require('@/assets/' + product.img + '')">
         </div>
         <div class="modal__infos">
             <div class="modal__description">
-                <h1>{{produto.title}}</h1>
-                <p>{{produto.desc}}</p>
-                <p>Preço: <b>{{produto.preco | preco}}</b></p>
+                <h1>{{product.title}}</h1>
+                <p>{{product.desc}}</p>
+                <p>Preço: <b>{{product.price | price}}</b></p>
             </div>
-            <button class="modal__addtocart" @click="addToCart(produto)">ADICIONAR AO CARRINHO</button>
+            <button class="modal__addtocart" @click="addToCart(product)">ADICIONAR AO CARRINHO</button>
         </div>
     </div>
   </div>
@@ -31,11 +31,11 @@ methods:{
     }
 },
 computed:{
-        produto(){
-            const id = this.$store.state.togglemodal.id
-            return this.$store.state.copos[id]
-        }
+    product(){
+        const id = this.$store.state.togglemodal.id
+        return this.$store.state.cups[id]
     }
+}
 }
 </script>
 

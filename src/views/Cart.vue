@@ -3,21 +3,21 @@
     <div class="cart__products">
       <h1>Seu carrinho!</h1>
       <p v-if="$store.state.cart == ''">Adicione produtinhos!</p>
-      <div v-for="produto in $store.state.cart" :key="produto.id" class="cart__item">
+      <div v-for="product in $store.state.cart" :key="product.id" class="cart__item">
         <div class="cart__img">
-          <img :src="require('@/assets/' + produto.img + '')" alt="Produto no carrinho">
+          <img :src="require('@/assets/' + product.img + '')" alt="Produto no carrinho">
         </div>
         <div class="cart__infos">
-          <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
-          <p>R${{produto.preco}}</p>
-          <span class="cart__remove" @click.stop="removeProduct(produto)">Remover</span>
+          <p>{{product.title}} | Quantidade: {{product.qty}}</p>
+          <p>{{product.price | price}}</p>
+          <span class="cart__remove" @click.stop="removeProduct(product)">Remover</span>
         </div>
       </div>
     </div>
     <div class="cart__summary" v-if="$store.state.cart != ''">
-      <p>Subtotal: R${{$store.state.total.toFixed(2)}}</p>
+      <p>Subtotal: {{$store.state.total | price}}</p>
       <p>Frete: R$20.00</p>
-      <p>Total: R${{($store.state.total + 20).toFixed(2)}}</p>
+      <p>Total: {{($store.state.total + 20) | price}}</p>
       <button v-if="$store.state.cart != ''">CHECKOUT</button>
     </div>
   </div>

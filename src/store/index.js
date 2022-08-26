@@ -5,12 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    copos:[
-      {id: 0, title: 'Coffee Box', img:'copocafe.webp', preco:200, qty:0,
+    cups:[
+      {id: 0, title: 'Coffee Box', img:'copocafe.webp', price:200, qty:0,
       desc:"Um combo perfeito com muito sabor para seu café matinal (ou diário :P)"},
-      {id: 1, title: 'Kit My Coffee', img:'kitcoffee.webp', preco:79.88, qty:0,
+      {id: 1, title: 'Kit My Coffee', img:'kitcoffee.webp', price:79.88, qty:0,
       desc:"Dois copinhos muito bem acabados com uma vibe de filme americano imbutido!"},
-      {id: 2, title: 'Zebra Cup', img:'copolistrado.webp', preco:38.99, qty:0,
+      {id: 2, title: 'Zebra Cup', img:'copolistrado.webp', price:38.99, qty:0,
       desc:"O produto perfeito para tomar seu cafézinho com muito estilo!",}
   ],
     cart:[],
@@ -30,13 +30,13 @@ export default new Vuex.Store({
       existingProduct ? existingProduct.qty += 1
       :(payload.qty = 1, state.cart.push(payload))
 
-      state.total += payload.preco
+      state.total += payload.price
       
     },
     removeProduct(state,payload){
       const cart = state.cart
       cart.splice(cart.indexOf(payload), 1)
-      state.total -= (payload.preco)*payload.qty
+      state.total -= (payload.price)*payload.qty
     },
     showCart(state){
       state.show = !state.show

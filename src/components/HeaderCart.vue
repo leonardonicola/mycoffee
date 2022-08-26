@@ -3,17 +3,17 @@
     <div v-show="$store.state.show" @click.self="showCart()" class="cartsummary">
         <div class="cartsummary__cart" >
           <h3>SHOPPING CART</h3>
-            <div v-for="produto in productList" :key="produto.id" class="cartsummary__hero">
+            <div v-for="product in productList" :key="product.id" class="cartsummary__hero">
               <div class="cartsummary__img">
-                  <img :src="require('@/assets/' + produto.img + '')" alt="Produto no carrinho">
+                  <img :src="require('@/assets/' + product.img + '')" alt="product no carrinho">
               </div>
-              <p>{{produto.title}} | Quantidade: {{produto.qty}}</p>
-              <p>{{produto.preco | preco}}</p>
-              <span class="cartsummary__remove" @click="removeProduct(produto)">Remover</span>
+              <p>{{product.title}} | Quantidade: {{product.qty}}</p>
+              <p>{{product.price | price}}</p>
+              <span class="cartsummary__remove" @click="removeProduct(product)">Remover</span>
               </div>
               <fa icon="close" class="cartsummary__close-button" @click="showCart()">X</fa>
             <p v-if="productList == ''">Seu carrinho está vazio!</p>
-            <p v-else>Total: {{$store.state.total | preco}}</p>
+            <p v-else>Total: {{$store.state.total | price}}</p>
             <router-link v-if="productList != ''" 
             class="cartsummary__link" 
             to="/cart">CHECKOUT</router-link>
@@ -36,11 +36,11 @@ methods:{
 },
 computed: {
   productList(){
-    let produto = []
+    let product = []
     this.$store.state.cart.forEach(element => {
-      produto.push(element)
+      product.push(element)
     });
-    return produto;
+    return product;
   }
 },
 mounted(){

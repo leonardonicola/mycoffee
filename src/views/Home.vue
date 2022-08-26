@@ -1,24 +1,24 @@
 <template>
     <main>
         <HeaderCart/>
-        <First/>
+        <Hero/>
         <fa id="icon" icon="coffee"/>
-        <section class="produtos">
-            <Produtos :id="1"/>
-            <Produtos :id="2"/>
-            <Produtos :id="0"/>
+        <section class="products">
+            <Products :id="1"/>
+            <Products :id="2"/>
+            <Products :id="0"/>
         </section>
         <Modal/>
     </main>
 </template>
 
 <script>
-import Produtos from '../components/Produtos.vue'
-import First from '../components/First.vue'
+import Products from '../components/Products.vue'
+import Hero from '../components/Hero.vue'
 import HeaderCart from '../components/HeaderCart.vue'
 import Modal from '../components/Modal.vue'
 export default {
-    components:{First, Produtos, HeaderCart, Modal}
+    components:{Hero, Products, HeaderCart, Modal}
 }
 </script>
 
@@ -39,7 +39,7 @@ export default {
         margin: 0 auto;
         transform: scale(5);
     }
-    .produtos{
+    .products{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         margin: 100px;
@@ -51,13 +51,13 @@ export default {
 
     
     @media screen and (max-width: 950px) {
-        .produtos{
+        .products{
             grid-template-columns: 1fr 1fr;
         }
     }
 
     @media screen and (max-width: 650px) {
-        .produtos{
+        .products{
             grid-template-columns: 1fr;
         }
     }

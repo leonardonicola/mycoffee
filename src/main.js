@@ -6,9 +6,9 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/free-solid-svg-icons'
 
-Vue.filter('preco', function(value){
-  const valor = value.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-  return valor
+Vue.filter('price', function(value){
+  const valueAlt = value.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+  return valueAlt
 })
 
 library.add(fas)
