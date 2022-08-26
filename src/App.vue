@@ -10,7 +10,10 @@
 <script>
 import Header from './views/Header.vue'
 export default {
-  components:{Header}
+  components:{Header},
+  beforeCreate(){
+    this.$store.commit('initialiseStore');
+  }
 }
 </script>
 
