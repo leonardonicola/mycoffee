@@ -5,7 +5,7 @@
         <h3>SHOPPING CART</h3>
         <div v-for="product in productList" :key="product.id" class="cartsummary__hero">
             <div class="cartsummary__img">
-                <img :src="require('@/assets/' + product.img + '')" alt="product no carrinho">
+                <img :src="require('@/assets/' + product.img + '')" :alt="product.title">
             </div>
             <p>{{product.title}} | Quantidade: {{product.qty}}</p>
             <p>{{product.price | price}}</p>

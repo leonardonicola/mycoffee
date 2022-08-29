@@ -38,15 +38,18 @@ export default new Vuex.Store({
       },
   },
   getters: {
+    //Return total price of cart
     total(state){
       return state.cart.map(prod => prod.qty * prod.price)
         .reduce((total,actual) => total + actual)
     },
+    //Return cart items
     cart(state){
       return state.cart
     }
   },
   mutations: {
+    //Add item to cart
       addToCart(state, payload) {
           const existingProduct = state.cart.find(el => el.id === payload.id)
 
@@ -54,21 +57,22 @@ export default new Vuex.Store({
               (payload.qty = 1, state.cart.push(payload))
 
       },
+      //Remove item from cart
       removeProduct(state, payload) {
           const cart = state.cart
           cart.splice(cart.indexOf(payload), 1)
       },
+      //Toggle the homepage cart sidebar visibility
       toggleCart(state) {
-          // Toggle the cart on home visibility
-          return state.showCart = !state.showCart
+        state.showCart = !state.showCart
       },
+      // Toggle the modal with the item clicked
       toggleModal(state, payload) {
-          // Toggle the modal visibility
-          return state.togglemodal.show ? (state.togglemodal.show = false, state.togglemodal.id = null) :
+        state.togglemodal.show ? (state.togglemodal.show = false, state.togglemodal.id = null) :
               (state.togglemodal.show = true, state.togglemodal.id = payload)
       },
+      // Replace the new state with the previous state
       initialiseStore(state) {
-          // Check if the ID exists
           localStorage.getItem('store') ?
               this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store')))) : null
       }
