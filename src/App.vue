@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
 
 *{
   box-sizing: border-box;
@@ -40,7 +40,7 @@ export default {
 }
 
 body{
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   overflow-x: hidden;
   height: 100vh;
