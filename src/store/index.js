@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import cart from './modules/cart'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+    modules:{cart},
+    state: {
       cups: [{
               id: 0,
               title: 'Coffee Box',
@@ -30,54 +32,18 @@ export default new Vuex.Store({
               desc: "O produto perfeito para tomar seu cafézinho com muito estilo!",
           }
       ],
-      cart: [],
-      showCart: false,
       togglemodal: {
           show: false,
           id: 0
       },
-  },
-  getters: {
-    //Return total price of cart
-    total(state){
-      return state.cart.map(prod => prod.qty * prod.price)
-        .reduce((total,actual) => total + actual)
     },
-    //Return cart items
-    cart(state){
-      return state.cart
-    }
-  },
-  mutations: {
-    //Add item to cart
-      addToCart(state, payload) {
-          const existingProduct = state.cart.find(el => el.id === payload.id)
-
-          existingProduct ? existingProduct.qty += 1 :
-              (payload.qty = 1, state.cart.push(payload))
-
-      },
-      //Remove item from cart
-      removeProduct(state, payload) {
-          const cart = state.cart
-          cart.splice(cart.indexOf(payload), 1)
-      },
-      //Toggle the homepage cart sidebar visibility
-      toggleCart(state) {
-        state.showCart = !state.showCart
-      },
+    mutations: {
+   
       // Toggle the modal with the item clicked
       toggleModal(state, payload) {
         state.togglemodal.show ? (state.togglemodal.show = false, state.togglemodal.id = null) :
               (state.togglemodal.show = true, state.togglemodal.id = payload)
-      },
-      // Replace the new state with the previous state
-      initialiseStore(state) {
-          localStorage.getItem('store') ?
-              this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store')))) : null
       }
-  },
-  actions: {},
-  modules: {}
+    }
 })
 

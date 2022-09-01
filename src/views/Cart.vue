@@ -24,20 +24,18 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations} from 'vuex'
 export default {
   
   methods:{
-    removeProduct(prod){
-      this.$store.commit('removeProduct', prod)
-    }
+    ...mapMutations('cart',['removeProduct'])
+
   },
   computed:{
-    cart(){
-      return this.$store.getters.cart
-    },
-    cartTotal(){
-      return this.$store.getters.total
-    }
+    ...mapGetters('cart',{
+      cart:'cartStatus',
+      cartTotal:'total'
+    })
   },
   mounted(){
     document.body.style.overflow = 'auto'

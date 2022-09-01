@@ -4,12 +4,13 @@
       <div class="header__shopping">
         <fa class="header__icon" @click="toggleCart()" 
         icon="bag-shopping"></fa>
-        <span class="header__cartlength">{{$store.state.cart.length}}</span>
+        <span class="header__cartlength">{{cartLength}}</span>
       </div>
    </header>
 </template>
 
 <script>
+import {mapMutations, mapGetters} from 'vuex'
 export default {
   mounted () {
     window.addEventListener('scroll', this.handleScroll());
@@ -17,13 +18,12 @@ export default {
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll());
   },
+  computed:{
+    ...mapGetters('cart',['cartLength'])
+  },
   methods:{
-    toggleCart(){
-      if(this.$route.name === 'home'){
-        document.body.style.overflow = 'hidden'
-        this.$store.commit('toggleCart')
-      }
-    },
+    ...mapMutations('cart',['toggleCart']),
+    
     handleScroll(){
       var prevScrollpos;
       window.addEventListener('scroll', () => {

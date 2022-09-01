@@ -15,10 +15,6 @@ library.add(fas)
 Vue.component('fa',FontAwesomeIcon)
 Vue.config.productionTip = false
 
-store.subscribe((_,state) => {
-	localStorage.setItem('store', JSON.stringify(state));
-});
-
 new Vue({
   router,
   store,

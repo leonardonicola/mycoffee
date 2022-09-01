@@ -21,34 +21,22 @@
 </template>
 
 <script>
+import {mapGetters, mapMutations} from 'vuex'
 export default {
 
     methods: {
-        removeProduct(prod) {
-            this.$store.commit('removeProduct', prod)
-        },
-        toggleCart() {
-            document.body.style.overflow = 'auto'
-            this.$store.commit('toggleCart')
-        }
+        ...mapMutations('cart',['removeProduct', 'toggleCart'])
     },
     computed: {
-
-        productList() {
-            return this.$store.getters.cart
-        },
-
-        showCartState() {
-            return this.$store.state.showCart
-        },
-
-        cartTotal() {
-            return this.$store.getters.total
-        }
+        ...mapGetters('cart',{
+            productList: 'cartStatus',
+            cartTotal: 'total',
+            showCartState: 'showCart'
+        }),
 
     },
     mounted() {
-        this.$store.state.show = false
+        this.$store.state.cart.showCart = false
     }
 
 }

@@ -12,16 +12,12 @@
 </template>
 
 <script>
+import { mapMutations} from 'vuex'
 export default {
     props:['id'],
     methods:{
-        addToCart(product){
-            this.$store.commit('addToCart', product)
-        },
-        toggleModal(id){
-            document.body.style.overflow = 'hidden'
-            this.$store.commit('toggleModal', id)
-        }
+        ...mapMutations('cart',['addToCart']),
+        ...mapMutations(['toggleModal'])
     },
     computed:{
         products(){
